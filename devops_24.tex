@@ -1,0 +1,342 @@
+%-------------------------------------
+% LaTeX Resume for Software Engineers
+% Author : Leslie Cheng
+% License : MIT
+%-------------------------------------
+
+\documentclass[letterpaper,12pt]{article}[leftmargin=*]
+
+\usepackage[empty]{fullpage}
+\usepackage{enumitem}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage[xetex]{hyperref}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+\fi
+\usepackage{fontawesome5}
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+%-------------------------------------------------- SETTINGS HERE --------------------------------------------------
+% Header settings
+\def \fullname {Thong Le Hoang}
+\def \subtitle {Software Engineer}
+
+% \def \linkedinicon {\faLinkedin}
+% \def \linkedinlink {https://linkedin.com/in/dwight-schrute/}
+% \def \linkedintext {/dwight-schrute}
+
+\def \phoneicon {\faPhone}
+\def \phonetext {+84-347-023-047}
+
+\def \emailicon {\faEnvelope}
+\def \emaillink {mailto:thongle0905@gmail.com}
+\def \emailtext {thongle0905@gmail.com}
+
+\def \addressicon {\faHome}
+\def \addresstext {Ho Chi Minh, Viet Nam}
+
+% \def \githubicon {\faGithub}
+% \def \githublink {https://github.com/dwight-schrute}
+% \def \githubtext {/dwight-schrute}
+
+% \def \websiteicon {\faGlobe}
+% \def \websitelink {https://google.com/}
+% \def \websitetext {dwightschrute.com}
+
+\def \headertype {\doublecol} % \singlecol or \doublecol
+
+% Misc settings
+\def \entryspacing {5pt}
+
+\def \bulletstyle {\faAngleRight}
+
+% Define colours
+\definecolor{primary}{HTML}{000000}
+\definecolor{secondary}{HTML}{0D47A1}
+\definecolor{accent}{HTML}{263238}
+\definecolor{links}{HTML}{1565C0}
+
+%------------------------------------------------------------------------------------------------------------------- 
+
+% Defines to make listing easier
+\def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+\def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
+\def \address {\addressicon \hspace{3pt}{ \addresstext}}
+\def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
+\def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
+\def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.1in}
+
+% Define the link colours
+\hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+}
+
+% Set the margin alignment 
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% Custom commands
+
+% Sections
+\renewcommand{\section}[2]{\vspace{5pt}
+  \colorbox{secondary}{\color{white}\raggedbottom\normalsize\textbf{{#1}{\hspace{7pt}#2}}}
+}
+
+% Entry start and end, for spacing
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]}
+\newcommand{\resumeEntryEnd}{\end{itemize}\vspace{\entryspacing}}
+
+% Itemized list for the bullet points under an entry, if necessary
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% Resume item
+\renewcommand{\labelitemii}{\bulletstyle}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Entry with title, subheading, date(s), and location
+\newcommand{\resumeEntryTSDL}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+      \textit{\color{accent}\small#3} & {\firabook\color{accent}\small#4} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry with title and date(s)
+\newcommand{\resumeEntryTD}[2]{
+  \vspace{1pt}\item[]
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
+      \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
+    \end{tabularx}\vspace{-6pt}
+}
+
+% Entry for special (skills)
+\newcommand{\resumeEntryS}[2]{
+  \item[]\small{
+    \textbf{\color{primary}#1 }{ #2 \vspace{-6pt}}
+  }
+}
+
+% Double column header
+\newcommand{\doublecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[c]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l@{\hspace{1.5em}}l}
+        {\small#4} & {\small#1} \\
+        {\small#5} & {\small#2} \\
+        {\small#6} & {\small#3}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+% Single column header
+\newcommand{\singlecol}[6]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[b]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l}
+        {\small#1} \\
+        {\small#2} \\
+        {\small#3} \\
+        {\small#4} \\
+        {\small#5} \\
+        {\small#6}
+      \end{tabular}
+    }
+  \end{tabularx}
+}
+
+\begin{document}
+%-------------------------------------------------- BEGIN HERE --------------------------------------------------
+
+%---------------------------------------------------- HEADER ----------------------------------------------------
+
+\headertype{\linkedin}{\github}{\website}{\phone}{\email}{\address} % Set the order of items here
+\vspace{10pt} % Set a negative value to push the body up, and the opposite
+
+%-------------------------------------------------- EDUCATION --------------------------------------------------
+\section{\faGraduationCap}{Education}
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {UNIVERSITY OF SCIENCE (HCMUS)}{2022 -- Present}
+      {Major: Computer and Information Science}{}
+    \resumeEntryTSDL
+      {UNIVERSITY OF TECHNOLOGY (HCMUT)}{2013 -- 2018}
+      {Major: Control engineering and Automation}{\vspace{5pt}}
+      \textit{\color{accent}\small#GPT: 7.37/10.0}
+    \resumeEntryTSDL
+      {TIEN GIANG GIFTED HIGH SCHOOL}{2010 -- 2012}
+      {Major: Information Technology}{}
+  \resumeEntryEnd
+
+%-------------------------------------------------- PROGRAMMING SKILLS -------------------------------------------------
+\section{\faChartLine}{Skills}
+ \resumeEntryStart
+  \resumeEntryS{Automation and scripting language } {Ansible, Bash script, Groovy, Node.JS, Python}
+  \resumeEntryS{Programming language } {Java, C++}
+  \resumeEntryS{IaC } {Experience in Terraform, learnt Cloud Formation}
+  \resumeEntryS{Visualization and orchestration } {Docker, ECS, EKS (Kubernetes)}
+  \resumeEntryS{CICD } {GitlabCI, Jenkins, Harness}
+  \resumeEntryS{Database } {PostgreSQL, MySQL, Redis}
+  \resumeEntryS{Cloud provider } {AWS: EKS, ECS, RDS, ElastiCache, S3, Lambda, IAM, R53, AWS Config, SNS...}
+  \resumeEntryS{SDLC } {Agile, V-module, workflow in ServiceNow}
+  \resumeEntryS{Communication } {English}
+ \resumeEntryEnd
+
+%-------------------------------------------------- EXPERIENCE --------------------------------------------------
+\section{\faBriefcase}{Experience}
+
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {NAB INNOVATION CENTRE VIETNAM}{}
+      {Analyst DevOps engineer}{May 2023 -- July 2024}
+    \resumeItemListStart
+      \resumeItem {Write auto jobs to free developers from repeated process such as Flyway job, job renewing certs, comparing deployments between envs... by using Bash script, Groovy and Jenkins plugins.}
+      \resumeItem {Write a job to gather info and verify configurations, help to \textbf{reduce almost 90\% wrong configurations} before releasing by using Node.JS.}
+      \resumeItem {Write a job interacting with Harness APIs for bulk triggering builds, bulk deployment; help to reduce Click-Ops deployment, \textbf{from 45m to less than 10m} by using Node.JS.}
+      \resumeItem {Structurally modulize existing AWS resources which were manually provisioned by using Terraform.}
+      \resumeItem {Onboard and customize services to ECS, EKS, migrate from Jenkins to Harness based on expose configuration from Platform.}
+      \resumeItem {\textbf{L3 support, take responsibility for Prod.}}
+      \vspace{1pt}\small{
+        \newline{Set up Splunk alerts for Prod env.}
+        \newline{Monitor AppDynamic dashboard.}
+        \newline{Troubleshoot Prod incidents.}
+      }\vspace{-1pt}
+      \resumeItem {Release to Prod followed workflow in ServiceNow, grasp the process of large enterprise.}
+      \resumeItem {Keep compliant about securities, vulnerabilities}
+      \vspace{1pt}\small{
+        \newline{Integrate these tools in the pipeline: SonarQube (Code quality), Checkmarx (SAST), SonaType (SCA), Prisma (CSS), Snyk...}
+        \newline{Patch CVE configurations in Linux.}
+      }\vspace{-1pt}
+      \resumeItem {Work with Aus DevOps and stakeholders; support for infrastructure, CI/CD, DevOps related issues/tasks.}
+    \resumeItemListEnd
+
+    \newpage
+    \vspace{-15pt}\resumeEntryTSDL
+      {}{}
+      {Associate Backend cum DevOps developer}{Mar 2022 -- May 2023}
+    \resumeItemListStart
+      \resumeItem {Develop REST apis to support bankers managing debts/facilities, entities, covenants... of large enterprises with \textbf{blackbox tests to cover real functionality and 90\% code coverage unit tests} using Java, Spring boot.}
+      \vspace{2pt}\small{
+        \newline{Boost up performance by using Redis.}
+        \newline{Sync data between databases using Kafka.}
+      }\vspace{-1pt}
+      \resumeItem {Enhance API performance \textbf{from more than 10s to less than 3s}.}
+      \resumeItem {Troubleshoot as well as bugs fixing for Prod incidents.}
+      \resumeItem {Follow NAB's process to release to Prod, managed by ServiceNow.}
+    \resumeItemListEnd
+    \textbf{\color{primary}\small#Achievement: }{\small#Outstanding performance 2023}
+  \resumeEntryEnd
+
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {INCEPTION LABS}{}
+      {Backend developer}{July 2021 -- Feb 2022}
+    \resumeItemListStart
+      \resumeItem {Crawl data, interact from/with websites via api, websocket, RabbitMQ.}
+      \resumeItem {Write Java code with multi-threading and micro-service architecture.}
+    \resumeItemListEnd
+
+    \vspace{-15pt}\resumeEntryTSDL
+      {}{}
+      {DevOps engineer}{Aug 2020 -- July 2021}
+    \resumeItemListStart
+      \resumeItem {Manage users and permission in Linux, set up Nginx, ActiveMQ... using Ansible.}
+      \resumeItem {Write CICD to build, run unit test, deploy services to both Windows and Linux instances... using GitlabCI.}
+      \resumeItem {Create automation jobs in Rundeck to handle renew certs, delete long-time unused Artifactory, extract MongoDB data then upload to S3 for reports... wrote by Bash script.}
+      \resumeItem {Set up high availability environment in AWS to prepare for disaster recovery.}
+      \resumeItem {L3 support, troubleshoot Prod issues.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {ROBERT BOSCH ENGINEERING AND BUSINESS SOLUTIONS VIETNAM}{}
+      {Function/Embedded developer}{Apr 2018 -- July 2020}
+    \resumeItemListStart
+      \resumeItem {Develop communication in vehicle using embedded C.}
+      \vspace{1pt}\small{
+        \newline{Program ComVeh for Huyndai, Suzuki.}
+        \newline{Program ComDia for Nissan.}
+      }\vspace{-1pt}
+      \resumeItem {Modify platform scripts to generate business desired code.}
+      \resumeItem {Schedule jobs in real time OS.}
+      \resumeItem {Work with V-model SDLC.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+%-------------------------------------------------- CERTIFICATIONS --------------------------------------------------
+\section{\faAward}{Certifications}
+  \resumeEntryStart
+    \resumeEntryTD
+      {(Upcoming) AWS Certified SysOps Administrator - Associate}{Aug 2024}
+  \resumeEntryEnd
+  \vspace{-20pt}
+  
+  \resumeEntryStart
+    \resumeEntryTD
+      {AWS Certified Cloud Practitioner}{Apr 2023}
+  \resumeEntryEnd
+  \vspace{-20pt}
+  
+  \resumeEntryStart
+    \resumeEntryTD
+      {TOEIC Certificate with score 690}{Jun 2018}
+  \resumeEntryEnd
+
+%-------------------------------------------------- ACTIVITIES --------------------------------------------------
+\section{\faWalking}{Activities}
+  \resumeEntryStart
+    \resumeEntryTD
+      {ONSITE IN INDIA}{Nov 2019 -- Jan 2020}
+    \resumeItemListStart
+      \resumeItem {Working onsite to India in main developer role in ComVeh Hyundai.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+  \vspace{-20pt}
+  
+  \resumeEntryStart
+    \resumeEntryTD
+      {HCMUT}{2013 -- 2018}
+    \resumeItemListStart
+      \resumeItem {Wiring, maintain electrical system for people in Green Summer campaign.}
+      \resumeItem {Become a member of Pay It Forward club - an electrical electronics club.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+\end{document}
