@@ -208,82 +208,71 @@
       {AXON}{Oct 2024 -- Present}
       {Platform Engineer Contractor}{}
     \resumeItemListStart
-      \resumeItem {\textbf{Set up staging GH Enterprise Server} then synchronize with Prod for verifying upgrading new version using \textit{Terraform and Puppet}.}
-      \resumeItem {Built, patched and upgraded images for GH runners, TeamCity agents (both Windows and Linux) using \textit{Packer, Ansible and Docker}.}
-      \resumeItem {Developed GH Actions such as one same as \textbf{Release-please but supports both semver, calver}; one showing \textbf{changes between deploying and running K8s Helm/Kustomize resources} in \textit{Typescript}.}
-      \resumeItem {Wrote End-to-End tests for GH Actions.}
-      \resumeItem {Significantly \textbf{reduce 85\% run duration and 40\% fetched artifacts size} of a GH Action by optimizing Git operations.}
-      \resumeItem {Customized \textit{Helm chart} for deploying GH runners at Enterprise level using \textit{ArgoCD}.}
-      \resumeItem {Created dashboard, alerts for TeamCity with custom metrics in \textit{Go and Prometheus, Cortex, Grafana} stack.}
-      \resumeItem {Wrote documentations from platform view fully covering users, operators, maintainers and from proposal, design to implementation, release.}
-      \resumeItem {On-call and troubleshoot support in Prod.}
-      \resumeItem {Flexibly applied \textit{GH Copilot and ChatGPT} to wide area from coding to troubleshooting incidents, reviewing PRs, auto chatbot.}
+      \resumeItem {Configured and synchronized \textit{GitHub Enterprise Server} Staging with Production using \textit{Terraform and Puppet} to validate version upgrades.}
+      \resumeItem {Built and maintained images for GitHub runners, TeamCity agents (Windows/Linux) with \textit{Packer, Ansible, Docker}.}
+      \resumeItem {Developed GitHub Actions, including a \textbf{customized Release-please supporting semver and calver} and a \textbf{diff tool for Helm/Kustomize resources} using \textit{TypeScript}.}
+      \resumeItem {Optimized Git operations, reducing a GitHub Action workflow \textbf{runtime by 85\%} and \textbf{artifact size by 40\%}.}
+      \resumeItem {Customized \textit{Helm chart} for enterprise-wide GitHub runner, deployment via \textit{ArgoCD}.}
+      \resumeItem {Implemented \textbf{custom metrics} monitoring and alerting for TeamCity with \textit{Go, Prometheus, Cortex, Grafana}.}
+      \resumeItem {Authored comprehensive documentation for users, operators, maintainers, covering proposal, design, implementation and release.}
+      \resumeItem {Provided on-call production support and troubleshooting.}
+      \resumeItem {Leveraged \textit{GitHub Copilot, ChatGPT} for coding, incidents investigation, PR reviews, and chatbot integration.}
     \resumeItemListEnd
   \resumeEntryEnd
 
   \resumeEntryStart
     \resumeEntryTSDL
       {NAB INNOVATION CENTRE VIETNAM}{Mar 2022 -- July 2024}
-      {DevOps engineer cums Backend developer}{}
+      {DevOps Engineer / Backend Developer}{}
     \resumeItemListStart
-      \resumeItem {Wrote auto jobs for repetitive processes such as Flyway migration, renewing certs, comparing deployments between envs... by using Bash \textit{script, Groovy, Python}.}
-      \resumeItem {Developed a tool to gather info and verify configurations, help to \textbf{reduce almost 90\% wrong configurations} before releasing using \textit{schema-validator in NodeJS}.}
-      \resumeItem {Wrote a tool interacting with Harness APIs for bulk triggering builds, deployment, smoke testing after deployment; help to reduce Click-Ops deployment \textbf{from 45m to less than 10m} by using \textit{NodeJS}.}
-      \resumeItem {\textbf{Imported manually created AWS resources} into \textit{Terraform} code; govern permissions, protect rules, settings in GitHub via \textit{Terraform}.}
-      \resumeItem {Onboarded services to \textit{ECS, EKS}, customize K8s and Jenkins resources based on configurations exposed from Platform team.}
-      \resumeItem {Setup AppDynamic dashboard.}
-      \resumeItem {\textbf{L3 support}, troubleshooted, coordinated with multi stakeholders (Aus DevOps, Product Owners, Release Train Engineer, Tech Leads...) to resolve incidents in Prod.}
-      \resumeItem {Kept compliant about securities, vulnerabilities}
-      \vspace{1pt}\small{
-        \newline{Integrated security tools in CI: \textit{SonarQube (Code quality), Checkmarx (SAST), SonaType (SCA), Prisma (CSS), Snyk}...}
-        \newline{Patched CVE configurations in Linux.}
-      }\vspace{-1pt}
-      \resumeItem {.}
-      \vspace{-10pt}\resumeItem {Developed REST apis to support bankers managing debts/facilities, entities, covenants... of wholesales, enterprises with \textbf{blackbox tests to cover golden scenarios and 90\% code coverage unit tests} using Java, Spring boot.}
-      \resumeItem {Enhanced API performance \textbf{from more than 10s to less than 3s}.}
+      \resumeItem {Automated Flyway migrations, cert renewals, and environment comparisons with \textit{Bash, Groovy, Python}.}
+      \resumeItem {Developed a configuration validation tool \textbf{reducing misconfigurations by 90\%} using \textit{schema-validator in Node.Js}.}
+      \resumeItem {Automated bulk build triggers and deployments in Harness and smoke test after deploying, reducing deployment time from \textbf{45m to <10m}.}
+      \resumeItem {Migrated manually created AWS resources into \textit{Terraform}, enforcing security and compliance.}
+      \resumeItem {Onboarded services to \textit{ECS, EKS} and customized Kubernetes/Jenkins configurations exposed from Platform.}
+      \resumeItem {Integrated security tools: \textit{SonarQube, Checkmarx, SonaType, Prisma, Snyk}, patched CVEs in applications and virtual machines.}
+      \resumeItem {Developed REST APIs for bankers managing debts/facilities, entities, covenants with \textbf{blackbox tests to cover golden scenarios and 90\% unit test coverage} using \textit{Java, Spring Boot}.}
+      \resumeItem {Optimized API response time from \textbf{>10s to <3s}.}
     \resumeItemListEnd
-    \textbf{\color{primary}\small#Achievement: }{\small#Outstanding performance 2023}
+    \textbf{\color{primary}\small#Achievement: }{\small#Outstanding Performance 2023}
   \resumeEntryEnd
 
-% \newpage
   \resumeEntryStart
     \resumeEntryTSDL
       {INCEPTION LABS}{Aug 2020 -- Feb 2022}
-      {DevOps engineer}{}
+      {DevOps Engineer}{}
     \resumeItemListStart
-      \resumeItem {Managed users and permission, set up and configured Nginx, Systemd, ipTables... in Linux using \textit{Ansible}.}
-      \resumeItem {\textbf{Wrote CICD} to build, run unit test, \textbf{deploy services to both Windows and Linux instances}... using \textit{GitlabCI}.}
-      \resumeItem {Created automation jobs in \textit{Rundeck} to handle renew certs, delete long-time unused Artifactory, extract MongoDB data then upload to S3 for reports... wrote by \textit{Bash script}.}
-      \resumeItem {\textbf{Set up high availability environment} in AWS to prepare for disaster recovery.}
-      \resumeItem {L3 support, troubleshoot Prod issues.}
-      \resumeItem {Crawled data, interact from/with websites via api, websocket, RabbitMQ with multi-threading \textit{Java}.}
+      \resumeItem {Managed user access and system configurations (Nginx, Systemd, ipTables) using \textit{Ansible}.}
+      \resumeItem {Implemented CI/CD pipelines for Windows/Linux deployments with \textit{Ansible and GitLab CI}.}
+      \resumeItem {Automated cert renewals, data extraction, and cleanup tasks with \textit{Rundeck, Bash}.}
+      \resumeItem {Set up a \textbf{high-availability AWS environment} for disaster recovery.}
+      \resumeItem {Provided \textbf{L3 Production} support and troubleshooting.}
+      \resumeItem {Developed multi-threaded data crawlers interacting via API, WebSocket, RabbitMQ using \textit{Java}.}
     \resumeItemListEnd
   \resumeEntryEnd
-
 
   \resumeEntryStart
     \resumeEntryTSDL
       {ROBERT BOSCH ENGINEERING AND BUSINESS SOLUTIONS VIETNAM}{Apr 2018 -- July 2020}
-      {Embedded developer}{}
+      {Embedded Developer}{}
     \resumeItemListStart
-      \resumeItem {Developed communication (ComVeh, ComDia) in vehicle for Huyndai, Suzuki, Nissan using embedded C.}
-      \resumeItem {Modified platform scripts to generate business desired code.}
-      \resumeItem {Scheduled jobs in real time OS.}
-      \resumeItem {Worked with V-model SDLC.}
+      \resumeItem {Developed in-vehicle communication systems for Hyundai, Suzuki, Nissan using \textit{Embedded C}.}
+      \resumeItem {Contributed platform script for business logic generation.}
+      \resumeItem {Scheduled real-time OS tasks following V-model SDLC.}
     \resumeItemListEnd
   \resumeEntryEnd
 
-  %-------------------------------------------------- EDUCATION --------------------------------------------------
-\section{\faGraduationCap}{Education}
-  \resumeEntryStart
-    \resumeEntryTSDL
-      {UNIVERSITY OF TECHNOLOGY (HCMUT)}{2013 -- 2018}
-      {Major: Control engineering and Automation}{\vspace{5pt}}
-      \textit{\color{accent}\small#GPT: 7.37/10.0}
-    \resumeEntryTSDL
-      {TIEN GIANG GIFTED HIGH SCHOOL}{2010 -- 2012}
-      {Major: Information Technology}{}
-\resumeEntryEnd
+    %-------------------------------------------------- EDUCATION --------------------------------------------------
+  \section{\faGraduationCap}{Education}
+    \resumeEntryStart
+      \resumeEntryTSDL
+        {UNIVERSITY OF TECHNOLOGY (HCMUT)}{2013 -- 2018}
+        {Major: Control engineering and Automation}{\vspace{5pt}}
+        \textit{\color{accent}\small#GPT: 7.37/10.0}
+      \resumeEntryTSDL
+        {TIEN GIANG GIFTED HIGH SCHOOL}{2010 -- 2012}
+        {Major: Information Technology}{}
+  \resumeEntryEnd
 
 
 %-------------------------------------------------- CERTIFICATIONS --------------------------------------------------
